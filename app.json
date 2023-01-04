@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5332c89f-106f-4023-bb00-d5d711c5a671"
+      }
+    },
+    "owner": "hazell"
   }
 }
