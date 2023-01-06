@@ -1,22 +1,25 @@
 import { View, Text, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import WorkoutCard from '../components/WorkoutCard';
-import {PlusCircleIcon } from "react-native-heroicons/solid";
+import {PlusIcon } from "react-native-heroicons/solid";
+import { useNavigation } from '@react-navigation/native';
 
-
-
-const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
+  
+  const navigation = useNavigation();
+
+
   return (
 
     <>
       <View className='mt-20 ml-5'>
           <Text className='text-2xl font-extrabold'> Hello!</Text>
-        </View>
-      <ScrollView>
-        <View className='relative mx-5 my-5'>
+      </View>
+
+      <View className='h-3/4'>
+      <ScrollView className='bg-gray-100'>
+        <View className='relative mx-5 my-3'>
               <View >
                   <WorkoutCard  
                       title="arm"
@@ -45,16 +48,40 @@ const HomeScreen = () => {
                       length={20}
                   />
 
+                <WorkoutCard  
+                      title="abs"
+                      length={20}
+                  />
+
+                <WorkoutCard  
+                      title="abs"
+                      length={20}
+                  />
+
+                <WorkoutCard  
+                      title="abs"
+                      length={20}
+                  />
+
               </View>
           </View>
 
       </ScrollView>
+      </View>
+      
 
-      <View className='absolute bottom-10 bg-gray-200 w-full'>
-          <TouchableOpacity className='text-center'>
-            <PlusCircleIcon  size={50}/>
+      <View className='absolute bottom-3 w-full flex-row justify-center'>
+        
+          <TouchableOpacity 
+            className=' bg-[#e9c46a] w-2/6 rounded-full flex-row justify-center py-4 shadow-xl'
+            onPress={() => {navigation.navigate("AddToPlan")}}
+            >
+            <View>
+              <PlusIcon size={50} color='black'/>
+            </View> 
           </TouchableOpacity>
       </View>
+
   
     </>
 
