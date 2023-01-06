@@ -11,7 +11,7 @@ import { Feather } from '@expo/vector-icons';
 import WorkoutScreen from '../screens/WorkoutScreen';
 import { Ionicons } from '@expo/vector-icons';
 import SettingScreen from '../screens/SettingScreen';
-
+import LoginScreen from '../screens/LoginScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -135,6 +135,15 @@ const SettingScreenStack = () => {
           component={SettingScreen} 
           options={{
             headerShown: false,
+          }}
+          />
+
+    <Stack.Screen 
+          name="LoginSignup" 
+          component={LoginScreen} 
+          options={{
+            headerShown: false,
+            presentation:'modal'
           }}
           />
     </Stack.Navigator>
